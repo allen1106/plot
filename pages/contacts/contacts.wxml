@@ -1,0 +1,13 @@
+<!--pages/contacts/contacts.wxml-->
+<view class="main">
+  <view class="item" wx:for="{{contactList}}" wx:key="item">
+    <view class="wrapper">
+      <view style="background-color: {{item.color}};" class="head">{{item.name[0]}}</view>
+      <view class="body">
+        <text class="name">{{item.name}}</text>
+        <text class="phone">{{item.phone}}</text>
+      </view>
+    </view>
+    <view class="btn">拨打</view>
+  </view>
+</view>

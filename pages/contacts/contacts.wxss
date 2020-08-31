@@ -1,0 +1,51 @@
+/* pages/contacts/contacts.wxss */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 20rpx auto;
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.item .wrapper {
+  display: flex;
+}
+
+.item .head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 20rpx;
+  border-radius: 120rpx;
+  color: #fff;
+  font-size: 40rpx;
+}
+
+.item .body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item .body .name {
+  font-size: 36rpx;
+}
+
+.item .body .phone {
+  font-size: 30rpx;
+  color: #bbb;
+}
+
+.item .btn {
+  width: 150rpx;
+  height: 60rpx;
+  border-radius: 60rpx;
+  background: linear-gradient(to right, #FF6347, #FF4500);
+  color: #fff;
+  text-align: center;
+  line-height: 60rpx;
+}

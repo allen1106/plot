@@ -1,0 +1,14 @@
+<!--pages/login/login.wxml-->
+<view class="login-container" wx:if="{{!bindInfo}}">
+  <view class="logo">
+    <image src="/imgs/bg/2.jpg" mode="widthFix"></image>
+  </view>
+  <view class="tip-msg">
+    <text class="bold-font">获取您的个人信息</text>
+    <text>授权后为您带来更好的体验</text>
+  </view>
+  <view class="btn-login">
+    <button class="bg-gray" bindtap="bindNavBack">拒绝</button>
+    <button class="bg-green" open-type="getUserInfo" bindgetuserinfo="login">微信登录</button>
+  </view>
+</view>

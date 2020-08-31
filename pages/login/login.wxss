@@ -1,0 +1,54 @@
+/* pages/login/login.wxss */
+page {
+  background-color: #fff;
+}
+
+.login-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.login-container .logo {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  margin: 100rpx auto;
+}
+
+.tip-msg {
+  display: flex;
+  flex-direction: column;
+  color: #bbb;
+}
+
+.tip-msg .bold-font {
+  font-size: 42rpx;
+  color: #000;
+  margin-bottom: 50rpx;
+}
+
+.btn-login {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100rpx;
+}
+
+.btn-login button:not([size='mini']) {
+  padding: 0;
+  width: 45%;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+}
+
+
+.btn-login .bg-gray:not([size='mini']) {
+  background-color: #DCDCDC;
+  color: #000;
+}
+
+.btn-login .bg-green:not([size='mini']) {
+  background-color: #06ad56;
+}
