@@ -1,11 +1,13 @@
 // pages/login/login.js
+var api = require("../../utils/api.js")
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    bindInfo: false
   },
 
   /**
@@ -22,6 +24,7 @@ Page({
   },
 
   login: function (e) {
+    var that = this
     wx.login({
       success (res) {
         if (res.code) {
@@ -36,10 +39,18 @@ Page({
               nickname: e.detail.userInfo.nickName
             },
             success: function (res) {
+              console.log(res)
               wx.setStorageSync('userId', res.data.userid)
-              wx.navigateBack({
-                delta: 1
-              })
+              wx.setStorageSync('userBind', res.data.bind)
+              if (res.data.bind === 1) {
+                wx.navigateBack({
+                  delta: 1
+                })
+              } else {
+                that.setData({
+                  bindInfo: true
+                })
+              }
             }
           })
         } else {

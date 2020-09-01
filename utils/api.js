@@ -1,6 +1,6 @@
 const HTTP_HOST = 'https://xunjian.hxy66.net'
 const API_HOST = HTTP_HOST + '/api/'
-const DEBUG = false
+const DEBUG = true
 const IMG_HOST = DEBUG ? '' : HTTP_HOST
 var Mock = require('../utils/mock.js')
 function phpRequest(requestParam) {

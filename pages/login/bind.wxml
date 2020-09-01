@@ -1,14 +1,24 @@
 <!--pages/login/bind.wxml-->
-<view class="bind-container" wx:if="{{!bindInfo}}">
-  <view class="logo">
-    <image src="/imgs/bg/1.jpg" mode="widthFix"></image>
+<form bindsubmit="register">
+<view class="container">
+  <view class="input-wrapper">
+    <text>选择小区</text>
+    <input name="community"></input>
+    <picker bindchange="bindCommunityPicker" value="{{index}}" range="{{communityList}}">
+    <image src="/imgs/index/10.jpg"></image>
+    </picker>
   </view>
-  <view class="tip-msg">
-    <text class="bold-font">请选择您居住的小区</text>
-    <text>看看邻居都在做什么，附近发生了什么事</text>
+  <view class="input-wrapper">
+    <text>姓名</text>
+    <input name="realname"></input>
   </view>
-  <view class="btn-login">
-    <button bindtap="bindChose">去选择小区</button>
+  <view class="input-wrapper">
+    <text>电话</text>
+    <input name="tel"></input>
   </view>
 </view>
+<view class="menu-wrapper">
+  <button form-type="submit">注册</button>
+</view>
+</form>
 

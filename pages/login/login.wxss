@@ -3,12 +3,13 @@ page {
   background-color: #fff;
 }
 
-.login-container {
+.login-container,
+.bind-container {
   width: 80%;
   margin: 0 auto;
 }
 
-.login-container .logo {
+.logo {
   width: 100%;
   align-items: center;
   text-align: center;
@@ -19,6 +20,13 @@ page {
   display: flex;
   flex-direction: column;
   color: #bbb;
+}
+
+.bind-container .tip-msg {
+  display: flex;
+  flex-direction: column;
+  color: #bbb;
+  align-items: center;
 }
 
 .tip-msg .bold-font {
@@ -51,4 +59,10 @@ page {
 
 .btn-login .bg-green:not([size='mini']) {
   background-color: #06ad56;
+}
+
+.btn-login .bg-orange:not([size='mini']) {
+  background-color: orangered;
+  width: 100%;
+  border-radius: 100rpx;
 }

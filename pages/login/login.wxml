@@ -12,3 +12,15 @@
     <button class="bg-green" open-type="getUserInfo" bindgetuserinfo="login">微信登录</button>
   </view>
 </view>
+<view class="bind-container" wx:if="{{bindInfo}}">
+  <view class="logo">
+    <image src="/imgs/bg/1.jpg" mode="widthFix"></image>
+  </view>
+  <view class="tip-msg">
+    <text class="bold-font">请选择您居住的小区</text>
+    <text>看看邻居都在做什么，附近发生了什么事</text>
+  </view>
+  <view class="btn-login">
+    <button class="bg-orange" bindtap="bindChose">去选择小区</button>
+  </view>
+</view>
