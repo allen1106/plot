@@ -1,6 +1,10 @@
 /* pages/login/bind.wxss */
 page {
-  font-size: 24rpx;
+  font-size: 32rpx;
+}
+
+picker {
+  width: 100%;
 }
 
 .container {
@@ -8,11 +12,8 @@ page {
   padding: 0;
   margin: 50rpx 5%;
   border-radius: 20rpx;
-  box-shadow: 0 5rpx 10rpx 2rpx #4876FF ;
-}
-
-picker {
-  width: 100%;
+  box-shadow: 0 5rpx 10rpx 2rpx #4876FF;
+  background-color: #fff;
 }
 
 .input-wrapper {
@@ -23,17 +24,26 @@ picker {
   padding: 20rpx 0;
   border-bottom: 5rpx solid #EAE7E8;
   align-items: center;
+  justify-content: space-between;
+}
+
+.input-wrapper text {
+  /* width: 20%; */
 }
 
 .input-wrapper input {
-  margin-left: 5%;
-  width: calc(100% - 50rpx);
+  max-width: 60%;
 }
 
+.input-wrapper view {
+  width: 10%;
+}
+
+
 .input-wrapper image{
-  width: 50rpx;
-  height: 50rpx;
-  margin: 0 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0 10rpx;
 }
 
 .menu-wrapper {

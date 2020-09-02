@@ -64,6 +64,7 @@ swiper image {
 .special image {
   margin-top: 20rpx;
   height: 150rpx;
+  width: 100%;
 }
 
 .announce {

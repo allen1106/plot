@@ -28,7 +28,7 @@
         <view class="top-wrapper">{{item.title}}</view>
         <view class="bottom-wrapper">
           <text>阅读 {{item.hits}}</text>
-          <text>{{item.date}}</text>
+          <text>{{item.datetime}}</text>
         </view>
       </view>
       <view class="img-wrapper">

@@ -32,16 +32,57 @@ Page({
         "hits": 42009,
         "date": "2020-08-20"
       },
-    ],
-    searchHandler: null,
-    latestItemList: [],
-    bindTapHandler: utils.navToItemDetail
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+  },
+
+  onShow: function () {
+    var that = this
+    // 获取小区名称，显示在title上
+    api.phpRequest({
+      url: 'info.php',
+      data: {
+        'userid': wx.getStorageSync('userId')
+      },
+      success: function (res) {
+        wx.setNavigationBarTitle({
+          title: res.data.village,
+        })
+      }
+    })
+    // 获取轮播图列表
+    api.phpRequest({
+      url: 'adver.php',
+      data: {
+        'userid': wx.getStorageSync('userId'),
+        'village_id': wx.getStorageSync('villageId')
+      },
+      success: function (res) {
+        var bgs = []
+        for (var i in res.data) { bgs.push(res.data[i].url) }
+        that.setData({
+          background: bgs
+        })
+      }
+    })
+    // 获取公告列表
+    api.phpRequest({
+      url: 'index_news.php',
+      data: {
+        'userid': wx.getStorageSync('userId'),
+        'village_id': wx.getStorageSync('villageId')
+      },
+      success: function (res) {
+        that.setData({
+          announceList: res.data
+        })
+      }
+    })
   },
 
   bindNav: function (e) {

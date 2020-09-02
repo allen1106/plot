@@ -21,6 +21,6 @@
     <text>看看邻居都在做什么，附近发生了什么事</text>
   </view>
   <view class="btn-login">
-    <button class="bg-orange" bindtap="bindChose">去选择小区</button>
+    <button class="bg-orange" bindtap="bindNavToBind">去选择小区</button>
   </view>
 </view>

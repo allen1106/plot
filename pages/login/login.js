@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bindInfo: false
+    bindInfo: false,
+    userInfo: null
   },
 
   /**
@@ -23,13 +24,23 @@ Page({
     })
   },
 
+  bindNavToBind: function () {
+    var {code, avatarUrl, gender, nickName} = this.data.userInfo
+    var url = `/pages/login/bind?c=${code}&a=${avatarUrl}&g=${gender}&n=${nickName}`
+    wx.navigateTo({
+      url: url
+    })
+  },
+
   login: function (e) {
     var that = this
     wx.login({
       success (res) {
         if (res.code) {
-          console.log(res.code)
-          console.log(e.detail.userInfo)
+          e.detail.userInfo.code = res.code
+          that.setData({
+            userInfo: e.detail.userInfo
+          })
           api.phpRequest({
             url: 'login.php',
             data: {
@@ -40,9 +51,9 @@ Page({
             },
             success: function (res) {
               console.log(res)
-              wx.setStorageSync('userId', res.data.userid)
-              wx.setStorageSync('userBind', res.data.bind)
               if (res.data.bind === 1) {
+                wx.setStorageSync('userId', res.data.userid)
+                wx.setStorageSync('userBind', res.data.bind)
                 wx.navigateBack({
                   delta: 1
                 })

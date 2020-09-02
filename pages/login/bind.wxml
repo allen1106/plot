@@ -1,24 +1,26 @@
 <!--pages/login/bind.wxml-->
 <form bindsubmit="register">
 <view class="container">
+  <picker bindchange="bindCommunityPicker" value="{{choosed}}" range="{{communityList}}" range-key="name" data-="{{communityList[choosed].id}}">
   <view class="input-wrapper">
     <text>选择小区</text>
-    <input name="community"></input>
-    <picker bindchange="bindCommunityPicker" value="{{index}}" range="{{communityList}}">
-    <image src="/imgs/index/10.jpg"></image>
-    </picker>
+    <input name="community" disabled="true" value="{{communityList[choosed].name}}"></input>
+    <view><image src="/imgs/index/10.jpg"></image></view>
   </view>
+  </picker>
   <view class="input-wrapper">
     <text>姓名</text>
     <input name="realname"></input>
+    <view></view>
   </view>
   <view class="input-wrapper">
     <text>电话</text>
     <input name="tel"></input>
+    <view></view>
   </view>
 </view>
 <view class="menu-wrapper">
-  <button form-type="submit">注册</button>
+  <button open-type="getUserInfo" form-type="submit">提交</button>
 </view>
 </form>
 
