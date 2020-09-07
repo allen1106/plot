@@ -1,1 +1,55 @@
 /* pages/monitor/monitor.wxss */
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.switch-tab {
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #bbb;
+  white-space: nowrap;
+}
+
+.switch-tab view {
+  display: inline-block;
+  width: 25%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #000;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.switch-tab view.active {
+  border-bottom: 5rpx solid #DC143C;
+  color: #DC143C;
+}
+
+.main {
+  width: 100%;
+  background-color: #fff;
+}
+
+swiper {
+  width: 90%;
+  height: 500rpx;
+  padding: 30rpx 5% 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+}

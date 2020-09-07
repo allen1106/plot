@@ -27,8 +27,9 @@ swiper image {
 
 .type-menu {
   width: 94%;
-  height: 400rpx;
+  /* height: 400rpx; */
   margin: 0 auto;
+  padding: 20rpx 0;
 }
 
 .type-menu .type-item {

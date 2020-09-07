@@ -1,2 +1,20 @@
 <!--pages/announce/announce.wxml-->
-<text>pages/announce/announce.wxml</text>
+<view class="main">
+  <view
+      class="item-wrapper item"
+      wx:for="{{announceList}}"
+      wx:key="item"
+      bindtap="bindNavToDetail"
+      data-id="{{item.id}}">
+    <view class="text-wrapper">
+      <view class="top-wrapper">{{item.title}}</view>
+      <view class="bottom-wrapper">
+        <text>阅读 {{item.hits}}</text>
+        <text>{{item.datetime}}</text>
+      </view>
+    </view>
+    <view class="img-wrapper">
+      <image src="{{item.img}}"></image>
+    </view>
+  </view>
+</view>

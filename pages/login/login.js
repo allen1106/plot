@@ -25,8 +25,8 @@ Page({
   },
 
   bindNavToBind: function () {
-    var {code, avatarUrl, gender, nickName} = this.data.userInfo
-    var url = `/pages/login/bind?c=${code}&a=${avatarUrl}&g=${gender}&n=${nickName}`
+    var {openId, avatarUrl, gender, nickName} = this.data.userInfo
+    var url = `/pages/login/bind?o=${openId}&a=${avatarUrl}&g=${gender}&n=${nickName}`
     wx.navigateTo({
       url: url
     })
@@ -37,10 +37,6 @@ Page({
     wx.login({
       success (res) {
         if (res.code) {
-          e.detail.userInfo.code = res.code
-          that.setData({
-            userInfo: e.detail.userInfo
-          })
           api.phpRequest({
             url: 'login.php',
             data: {
@@ -51,9 +47,13 @@ Page({
             },
             success: function (res) {
               console.log(res)
+              e.detail.userInfo.openId = res.data.openid
+              that.setData({
+                userInfo: e.detail.userInfo
+              })
               if (res.data.bind === 1) {
                 wx.setStorageSync('userId', res.data.userid)
-                wx.setStorageSync('userBind', res.data.bind)
+                wx.setStorageSync('villageId', res.data.village_id)
                 wx.navigateBack({
                   delta: 1
                 })

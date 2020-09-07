@@ -1,0 +1,11 @@
+<!--pages/announce/detail.wxml-->
+<import src="/wxParse/wxParse.wxml" />
+
+<view class="main">
+  <view class="header">{{info.name}}</view>
+  <view class="info">
+    <text>{{info.datetime}}</text>
+    <text>{{info.column}}</text>
+  </view>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>

@@ -1,1 +1,50 @@
 /* pages/announce/announce.wxss */
+.main {
+  background-color: #fff;
+  margin-top: 5rpx;
+  padding-bottom: 100rpx;
+}
+
+.main .item-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20rpx 0;
+  border-bottom: 2rpx #bbb solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main .title text {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.main .title image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.main .item .text-wrapper text {
+  font-size: 32rpx;
+}
+
+.main .item .text-wrapper .bottom-wrapper {
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  color: #bbb;
+}
+
+.main .item .text-wrapper .bottom-wrapper text {
+  font-size: 24rpx;
+}
+
+.main .item .img-wrapper {
+  padding: 0 10rpx;
+}
+
+.img-wrapper image {
+  width: 150rpx;
+  height: 150rpx;
+}

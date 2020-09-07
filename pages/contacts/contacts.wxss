@@ -25,6 +25,13 @@
   font-size: 40rpx;
 }
 
+.item .head:nth-child(2n) {
+  background-color: #FFB100;
+}
+.item .head:nth-child(2n + 1) {
+  background-color: #00C0FF;
+}
+
 .item .body {
   display: flex;
   flex-direction: column;

@@ -9,21 +9,21 @@
 </view>
 <view class="main">
   <view class="type-menu panel">
-    <view wx:for="{{typeList}}" wx:key="item" class="type-item" data-nav="{{item.nav}}" bindtap="bindNav">
+    <view wx:for="{{typeList}}" wx:key="item" class="type-item" data-nav="{{item.nav}}" bindtap="{{item.bind}}">
       <image src="{{item.img}}"></image>
       <text>{{item.name}}</text>
     </view>
   </view>
   <view class="special panel">
     <text class="title">疫情防控专区</text>
-    <image src="/imgs/index/9.jpg"></image>
+    <image src="/imgs/index/9.jpg" data-nav="/pages/announce/announce?catid=12" bindtap="bindNav"></image>
   </view>
   <view class="announce panel">
-    <view class="title item-wrapper">
+    <view class="title item-wrapper" data-nav="/pages/announce/announce?catid=11" bindtap="bindNav">
       <text>小区公告</text>
       <image src="/imgs/index/10.jpg"></image>
     </view>
-    <view class="item-wrapper item" wx:for="{{announceList}}" wx:key="item">
+    <view class="item-wrapper item" wx:for="{{announceList}}" wx:key="item" data-nav="/pages/announce/detail?id={{item.id}}" bindtap="bindNav">
       <view class="text-wrapper">
         <view class="top-wrapper">{{item.title}}</view>
         <view class="bottom-wrapper">

@@ -1,5 +1,6 @@
-// pages/announce/announce.js
+// pages/announce/detail.js
 var api = require("../../utils/api.js")
+var WxParse = require('../../wxParse/wxParse.js')
 
 Page({
 
@@ -7,8 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    catId: 11,
-    announceList: []
+    id: 0,
+    info: null,
+    article: null
   },
 
   /**
@@ -18,43 +20,24 @@ Page({
     var that = this
     var userId = wx.getStorageSync('userId')
     var villageId = wx.getStorageSync('villageId')
-    var catId = options.catid
+    var id = options.id
     api.phpRequest({
-      url: 'news.php',
+      url: 'newslist.php',
       data: {
         'userid': userId,
         'village_id': villageId,
-        'cat_id': catId || that.data.catId
+        'id': id || that.data.id
       },
       success: function (res) {
         that.setData({
-          announceList: res.data
+          info: res.data
+        }, () => {
+          that.data.info.content = that.data.info.content.replace(/src="(.*?)"/g, 'src="' + api.IMG_HOST + '$1"')
+          WxParse.wxParse('article', 'html', that.data.info.content, that, 5)
         })
       }
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  bindNavToDetail: function (e) {
-    var id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '/pages/announce/detail?id=' + id,
-    })
-  },
-
   /**
    * 用户点击右上角分享
    */

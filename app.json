@@ -3,11 +3,11 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/monitor/monitor",
-    "pages/community/community",
     "pages/contacts/contacts",
     "pages/announce/announce",
     "pages/login/login",
-    "pages/login/bind"
+    "pages/login/bind",
+    "pages/announce/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

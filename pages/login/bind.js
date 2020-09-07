@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     var that = this
     var info = {
-      'code': options.c,
+      'openId': options.o,
       'avatarUrl': options.a,
       'gender': options.g,
       'nickName': options.n,
@@ -78,7 +78,7 @@ Page({
       'avatar_url': that.data.userInfo.avatarUrl,
       'gender': that.data.userInfo.gender,
       'nickname': that.data.userInfo.nickName,
-      'code': that.data.userInfo.code
+      'openid': that.data.userInfo.openId
     }
     console.log("提交数据")
     console.log(data)
@@ -96,7 +96,7 @@ Page({
         switch (status) {
           case 1:
             wx.setStorageSync('userId', res.data.userid)
-            wx.setStorageSync('userBind', 1)
+            wx.setStorageSync('villageId', res.data.village_id)
             wx.showToast({
               title: '注册成功',
               icon: 'success',

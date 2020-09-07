@@ -1,10 +1,20 @@
 <!--pages/monitor/monitor.wxml-->
-<text>pages/monitor/monitor.wxml</text>
-<video direction="0"
-        src="http://hls01open.ys7.com/openlive/f01018a141094b7fa138b9d0b856507b.hd.m3u8"
-        :controls="true"
-        objectFit="cover"
-        autoplay
-        :show-fullscreen-btn="false"
-        :show-play-btn="false"
-></video>
+<view class="header">
+  <view class='switch-tab'>
+    <scroll-view scroll-x>
+      <view wx:for='{{videoList}}' wx:key="item" class='{{currentTab == index ? "active" : ""}}' data-current='{{index}}' bindtap='swichNav'>{{item.name}}</view>
+   </scroll-view>
+  </view>
+</view>
+<view class="main">
+  <swiper current="{{currentTab}}"  bindchange="changeSwiperTab">
+    <swiper-item wx:for="{{videoList}}" wx:key="item">
+      <video
+        src="{{item.src}}"
+        controls
+        show-center-play-btn="true"
+        show-play-btn="true"
+      ></video>
+    </swiper-item>
+  </swiper>
+</view>
