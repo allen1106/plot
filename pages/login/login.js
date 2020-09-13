@@ -37,6 +37,8 @@ Page({
     wx.login({
       success (res) {
         if (res.code) {
+          console.log(res)
+          console.log(e.detail)
           api.phpRequest({
             url: 'login.php',
             data: {

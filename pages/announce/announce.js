@@ -19,6 +19,9 @@ Page({
     var userId = wx.getStorageSync('userId')
     var villageId = wx.getStorageSync('villageId')
     var catId = options.catid
+    wx.setNavigationBarTitle({
+      title: catId == 12 ? "防控疫情专区" : "小区公告",
+    })
     api.phpRequest({
       url: 'news.php',
       data: {

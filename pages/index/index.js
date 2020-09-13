@@ -53,6 +53,22 @@ Page({
         }
       })
     }
+    if (!villageId) {
+      // 获取轮播图列表
+      api.phpRequest({
+        url: 'adver.php',
+        data: {
+          // 'userid': userId
+        },
+        success: function (res) {
+          var bgs = []
+          for (var i in res.data) { bgs.push(res.data[i].img) }
+          that.setData({
+            background: bgs
+          })
+        }
+      })
+    }
     if (userId && villageId) {
       // 获取轮播图列表
       api.phpRequest({
@@ -63,7 +79,7 @@ Page({
         },
         success: function (res) {
           var bgs = []
-          for (var i in res.data) { bgs.push(res.data[i].url) }
+          for (var i in res.data) { bgs.push(res.data[i].img) }
           that.setData({
             background: bgs
           })
